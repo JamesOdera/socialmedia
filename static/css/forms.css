@@ -1,0 +1,413 @@
+/* POST FORM */
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 40vw;
+    height: 50vh;
+    padding: 3em;
+    background: hsla(252, 100%, 90%, .3);
+    color: var(--color-gray);
+    border-radius: var(--card-border-radius);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* .form form:hover {
+    margin: 4px;
+} */
+
+.form form input, textarea  {
+    background: transparent;
+    padding: 1em;
+    margin-bottom: 2em;
+    border: none;
+    border-radius: var(--input-border-radius);
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.form form input, textarea:hover {
+    background: rgba(255,255,255,0.1);
+}
+.form form input, textarea:focus {
+    background: rgba(255,255,255,0.1);
+}
+.form form input, textarea::placeholder {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+.form form input::placeholder {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+
+.form form .btn {
+    padding: 1rem;
+}
+
+.drop {
+    background: var(--color-dark);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+    position: absolute;
+    transition: all 0.2s ease;
+}
+    
+.drop-1 {
+    height: 80px;
+    width: 80px;
+    top: -5px;
+    left: -20px;
+    z-index: -1;
+}
+
+.drop-2 {
+    height: 80px;
+    width: 80px;
+    bottom: -30px;
+    right: -50px;
+}
+
+.drop-3 {
+    height: 100px;
+    width: 100px;
+    bottom: 200px;
+    left: 0px;
+    z-index: -1;
+}
+
+.drop-4 {
+    height: 120px;
+    width: 120px;
+    top: -35px;
+    right: -40px;
+}
+
+/* LOGIN FORM */
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin: 0 auto; */
+    width: 40vw;
+    height: 50vh;
+    padding: 3rem;
+    background: hsla(252, 100%, 90%, 0.13);
+    color: var(--color-gray);
+    border-radius: var(--card-border-radius);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    /* cursor: pointer; */
+}
+
+.login .user {
+    height: 100;
+    width: 100;
+    background: hsla(0, 75.29%, 79.61%, .3);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+    /* position: absolute;
+    top: -35px;
+    right: -40px; */
+}
+
+.login form input {
+    background: transparent;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: var(--input-border-radius);
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.login form input:hover {
+    background: hsla(252, 100%, 90%, 0.3);
+}
+.login form input:focus {
+    background: hsla(252, 100%, 90%, 0.07);
+}
+.login form input::placeholder {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+
+.login form .btn {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+}
+
+.login .drop-5 {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    top: -30px;
+    left: 40%;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login form .text-center {
+    display: grid;
+    place-items: center;
+    margin-top: 1rem;
+}
+
+.login form .social__btn {
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    /* place-items: center; */
+    margin-top: 1rem;
+}
+
+.login form .social__btn .btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    border: none;
+    border-radius: var(--input-border-radius);
+    background-color: hsla(252, 100%, 90%, .3);
+    color: var(--color-gray);
+    font-size: 16px;
+    cursor: pointer;
+}
+/*  */
+
+
+
+/* REGISTER FORM */
+.register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.register form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin: 0 auto; */
+    width: 40vw;
+    height: 80vh;
+    padding: 3rem;
+    background: hsla(252, 100%, 90%, 0.13);
+    color: var(--color-gray);
+    border-radius: var(--card-border-radius);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* .form form:hover {
+    margin: 4px;
+} */
+
+.register form input {
+    background: transparent;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: var(--input-border-radius);
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.register form input:hover {
+    background: hsla(252, 100%, 90%, 0.3);
+}
+.register form input:focus {
+    background: hsla(252, 100%, 90%, 0.07);
+}
+.register form input::placeholder {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+.register form input::placeholder {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+
+.register form .btn {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+}
+/*  */
+  
+
+/* PROFILE EDIT FORM */
+.edit__profile {
+    display: grid;
+    place-items: center;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem; */
+}
+
+.edit__profile form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin: 0 auto; */
+    width: 40vw;
+    height: 110vh;
+    padding: 3rem;
+    background: hsla(252, 100%, 90%, .3);
+    color: var(--color-gray);
+    border-radius: var(--card-border-radius);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* .form form:hover {
+    margin: 4px;
+} */
+
+.edit__profile form input {
+    background: transparent;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: var(--input-border-radius);
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.edit__profile form input, textarea:hover {
+    background: hsla(0, 75.29%, 79.61%, .1);
+}
+.edit__profile form input, textarea:focus {
+    background: hsla(252, 39%, 10%, .3);
+}
+.edit__profile form input, textarea::placeholder {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+.edit__profile form input::placeholder {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+
+.edit__profile form .btn {
+    padding: 1rem;
+}
+/*  */
+  
+
+/* ===================== MEDIA QUERIES(TABLETS) =================== */
+@media screen and (max-width: 1200px){
+    .form form {
+        width: 60vw;
+    }
+
+    .login form {
+        width: 60vw;
+    }
+
+    .register form {
+        width: 60vw;
+    }
+}
+
+/* ===================== MEDIA QUERIES(PHONES)  =================== */
+@media screen and (max-width: 992px){
+    .form form {
+        width: 90vw;
+    }
+
+    .login form {
+        width: 90vw;
+    }
+
+    .login .drop-1, .drop-2, .drop-3, .drop-4 {
+        display: none;
+    }
+
+    .login .drop-5 {
+        border-radius: 50%;
+        height: 80px;
+        width: 80px;
+        top: -10px;
+        left: 70%;
+        font-size: 2rem;
+    }
+
+    .register form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        /* height: 90vh; */
+        width: 90vw;
+        padding: 1.2rem;
+    }
+
+    .register form input {
+        padding: 0.6rem;
+        /* margin-bottom: 1rem; */
+        font-size: 1rem;
+    }
+
+    .register form input::placeholder {
+        font-size: 1rem;
+    }
+}

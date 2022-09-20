@@ -1,0 +1,69 @@
+{%extends 'media/base.html'%}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<!-- ==================== MAIN ==================== -->
+<section>
+    <div class="container profile__container">
+        <article class="profile">
+            <div class="profile__card">
+                <article class="upper">
+                    <img src="{{ profile.photo.url }}" alt="profile-picture">
+                    {% if user == request.user %}
+                    <div class="fol-sec">
+                        <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+                        {% if total_followers == 0 %} <b>No follower{{ total_followers|pluralize }}</b> {% else %}<a href="{% url 'list-followers' profile.id %}" class="a"><b>{{ total_followers }} follower{{ total_followers|pluralize }}</b></a>{% endif %}
+                    </div>
+                    {% else %}
+                    <div id="follow-section" class="fol-sec">
+                        {% include 'media/follow_section.html' %}
+                    </div>
+                    {% endif %}
+                </article>
+                <article class="middle">
+                    {% if profile.user %}
+                    <a class="middle__profile">
+                        <div class="handle">
+                            <h4>{{profile.user.username}}</h4>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% if profile.birth_date %}
+                    <a class="middle__profile">
+                        <div class="handle">
+                            <h4>{{profile.birth_date}}</h4>
+                        </div>
+                    </a>
+                    {% endif %}
+                    {% if profile.location %}
+                    <a class="middle__profile">
+                        <div class="handle">
+                            <h4>{{profile.location}}</h4>
+                        </div>
+                    </a>
+                    {% endif %}
+                </article>
+                <article class="lower">
+                    {% if profile.bio %}
+                    <a class="lower__profile">
+                        <div class="handle">
+                            <h4>{{profile.bio}}</h4>
+                        </div>
+                    </a>
+                    {% endif %}
+                </article>
+            </div>
+            <div class="post__card">
+                <div class="photo">
+                    {% for post in posts %}  
+                    <a href="{{post.get_absolute_url}}">
+                        <img src="{{ post.image.url }}" alt="picture">
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}

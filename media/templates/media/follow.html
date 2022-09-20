@@ -1,0 +1,38 @@
+{%extends 'media/base.html'%}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<!-- ==================== MAIN ==================== -->
+<section>
+    <div class="container profile__container">
+        <article class="profile">
+            <div class="follower__card">
+                <a href="{% url 'index' %}" class="btn btn-primary"><i class="uil uil-arrow-left"></i> home</a>
+                <div class="follower-title">
+                    <h3>Follow Users</h3>
+                </div>
+                <div class="follower-card">
+                    {% for p in profile %}
+                        <a href="{% url 'profile' p.user.profile.id %}" class="profile">
+                            <div class="profile-photo">
+                                <img src="{{ p.user.profile.photo.url }}" alt="profile-picture">
+                            </div>
+                            <div class="handle">
+                                <h4>{{p.user}}</h4>
+                                <p>
+                                    {% for f in follow %}
+                                    {% if f.user == p.user %}
+                                    following {{f.user}}
+                                    {% endif %}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}

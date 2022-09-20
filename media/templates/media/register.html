@@ -1,0 +1,18 @@
+{%extends 'media/base.html'%}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<!-- ==================== MAIN ==================== -->
+<section>
+    <div class="register">
+        <h1>Register</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

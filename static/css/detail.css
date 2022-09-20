@@ -1,0 +1,484 @@
+/* POST DETAIL PAGE STYLING */
+.detail__container {
+    margin-top: 6rem;
+}
+
+.detail__container .details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+.detail__container .middle .feed .action-buttons .interaction-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.detail__container .middle .feed .action-buttons .interaction-buttons .red {
+    color: var(--color-danger);
+}
+
+.detail__container .middle .feed  button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.detail__container .middle .feed .user__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.detail__container .middle .feed .user__button a {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.detail__container .middle .feed .user__button button {
+    border: 1px solid var(--color-black);
+    background: var(--color-secondary);
+    color: var(--color-dark);
+    display: inline-block;
+    padding: var(--edit-btn-padding);
+    font-weight: 500;
+    border-radius: var(--input-border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.detail__container .middle .feed .user__button button:hover {
+    opacity: 0.8;
+}
+
+.detail__container .middle .feed .user__button .delete__button {
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+/*  */
+
+.detail__container .middle .feed .action-buttons button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.detail__container .details .comment__section {
+    background: var(--color-dark);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    width: 100%;
+}
+
+.details .comment__section .comment__form textarea  {
+    background: hsla(252, 100%, 90%, .3);
+    padding: 1em;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: var(--input-border-radius);
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.details .comment__section .comment__form textarea:hover {
+    background: rgba(255,255,255,0.1);
+}
+.details .comment__section .comment__form textarea:focus {
+    background: rgba(255,255,255,0.1);
+}
+.details .comment__section .comment__form textarea::placeholder {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--color-gray);
+}
+.details .comment__section .comment__form form input::placeholder {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--color-white);
+}
+
+.details .comment__section .comment__form form .btn {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: var(--input-border-radius);
+    background-color: hsla(252, 100%, 90%, .3);
+    color: var(--color-gray);
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.details .comment__section .user__comment {
+    margin-top: 2rem;
+    display: grid;
+    /* gap: 1rem; */
+    height: 52vh;
+    overflow: scroll;
+}
+
+.details .comment__section .user__comment .main-comment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.details .comment__section .user__comment .comment {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.details .comment__section .user__comment .comment .profile__user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.details .comment__section .user__comment .comment .profile__user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-black);
+}
+
+.details .comment__section .user__comment .comment .user__view {
+    padding: var(--card-padding);
+    background: var(--color-black);
+    color: var(--color-gray);
+    border-radius: var(--card-border-radius);
+    column-gap: 1rem;
+    width: fit-content;
+    height: fit-content;
+    transition: var(--transition);
+    cursor: pointer;
+    margin-right: 1.2rem;
+}
+
+.details .comment__section .user__comment .comment .user__view::before {
+    content: "";
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    background: var(--color-black);
+    left: 3rem;
+    transform: rotate(45deg);
+}
+
+/* REPLY FORM */
+
+.details .comment__section .user__comment .reply__button{
+    margin-left: 4rem;
+    margin-bottom: 0.4rem;
+}
+
+.details .comment__section .user__comment .reply__button button {
+    cursor: pointer;
+    padding: 0.1rem 0.6rem;
+    border-radius: 0.2rem;
+    background: var(--color-primary);
+    color: var(--color-dark);
+    /* border: 1px solid var(--color-primary); */
+    transition: var(--transition);
+}
+
+.details .comment__section .user__comment .reply__button button:hover {
+    /* border: 1px solid var(--color-primary); */
+    background: var(--color-black);
+    color: var(--color-primary);
+}
+
+.details .comment__section .user__comment .replied-comments {
+    display: none;
+    margin-left: 3rem;
+}
+
+
+.details .comment__section .user__comment .replied-comments .comment {
+    display: flex;
+    gap: 0.8rem;
+    position: relative;
+}
+
+.details .comment__section .user__comment .replied-comments .reply {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;;
+    margin-bottom: 1rem;
+}
+
+.details .comment__section .user__comment .replied-comments .profile__user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    margin-top: 0.5rem;;
+}
+
+.details .comment__section .user__comment .replied-comments .profile__user img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--color-black);
+}
+
+.details .comment__section .user__comment .replied-comments .user__view {
+    padding: var(--card-padding);
+    background: var(--color-black);
+    color: var(--color-gray);
+    border-radius: var(--card-border-radius);
+    /* column-gap: 1rem; */
+    width: fit-content;
+    height: fit-content;
+    transition: var(--transition);
+    cursor: pointer;
+    /* margin-left: 0.5rem; */
+    /* margin-right: 1.5rem; */
+}
+
+.details .comment__section .user__comment .replied-comments .user__view::before {
+    content: "";
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    background: var(--color-black);
+    left: 2.1rem;
+    transform: rotate(45deg);
+}
+
+/* END REPLY FORM */
+
+/* PROFILE CARD STYLING */
+
+/* UPPER SECTION */
+
+.profile__container {
+    display: grid;
+    gap: 2rem;
+    margin-top: 8rem;
+}
+
+.profile__container .profile {
+    display: grid;
+    place-items: center;
+    gap: 6rem;
+}
+
+.profile__container .profile .profile__card {
+    display: grid;
+    gap: 3rem;
+    height: fit-content;
+    background: var(--color-dark);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 2rem;
+    width: 70%;
+}
+
+.profile__container .profile .follower__card {
+    /* display: grid; */
+    /* gap: 1rem; */
+    height: fit-content;
+    background: var(--color-dark);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 2rem;
+    width: 70%;
+}
+
+.profile__container .profile .follower-title {
+    margin-top: 2rem;
+}
+
+.profile__container .profile .follower-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    height: fit-content;
+    background: var(--color-dark);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 2rem;
+}
+
+.profile__container .profile .follower-card .profile {
+    padding: var(--card-padding);
+    background: var(--color-black);
+    color: var(--color-gray);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    width: 100%;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.profile__container .profile .follower-card .profile-photo {
+    border: 3px solid var(--color-gray);
+}
+.profile__container .profile .follower-card .profile:hover {
+    box-shadow: 0 0 1rem var(--color-primary);
+    color: var(--color-primary);
+}
+
+.profile__container .profile .profile__card .upper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.profile__container .profile .profile__card .upper img {
+    top: 0px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--color-black);
+    /* margin-bottom: 1rem; */
+    border: 3px solid var(--color-gray);
+}
+
+.profile__container .profile .profile__card .upper .a {
+	color: inherit;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* MIDDLE SECTION */
+
+.profile__container .profile .profile__card .middle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.profile__container .profile .profile__card .middle .middle__profile, .lower__profile {
+    padding: var(--card-padding);
+    background: var(--color-black);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    width: 100%;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.profile__container .profile .profile__card .middle .middle__profile:hover {
+    box-shadow: 0 0 1rem var(--color-primary);
+    color: var(--color-primary);
+}
+
+.profile__container .profile .profile__card .fol-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+
+/* LOWER SECTION */
+.profile__container .profile .profile__card .lower .lower__profile:hover {
+    box-shadow: 0 0 1rem var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* USER POST SECTION */
+.profile .post__card {
+    height: fit-content;
+    background: var(--color-dark);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 2rem;
+    width: 70%;
+}
+
+.profile .post__card .photo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+
+/*  */
+
+/* ===================== MEDIA QUERIES(TABLETS) =================== */
+@media screen and (max-width: 1200px){
+    .profile__container .profile .profile__card {
+        width: 80%;
+    }
+
+    .profile__container .profile .post__card {
+        width: 80%;
+    }
+
+    .detail__container {
+        width: 80%;
+    }
+
+    .detail__container .details {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* ===================== MEDIA QUERIES(PHONES)  =================== */
+@media screen and (max-width: 600px){
+    .profile__container .profile .profile__card {
+        width: 90%;
+    }
+
+    .profile__container .profile .post__card {
+        width: 90%;
+    }
+
+    .profile__container .profile .profile__card .middle {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .profile .post__card .photo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .detail__container .details {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

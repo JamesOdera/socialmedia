@@ -1,0 +1,11 @@
+{% if request.user.is_authenticated %}
+<form action="{% url 'follow_user' %}" method="POST">
+    {% csrf_token %}
+    {% if is_followed %}
+    <button type="submit" id="follow" name="profile_id" value="{{ profile.id }}" class="btn btn-primary">Unfollow</button>
+    {% else %}
+    <button type="submit" id="follow" name="profile_id" value="{{ profile.id }}" class="btn btn-primary">Follow</button>
+    {% endif %}
+</form>
+{% endif %}
+<b>{{ total_followers }} follower{{ total_followers|pluralize }}</b> 

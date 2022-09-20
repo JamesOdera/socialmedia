@@ -1,0 +1,29 @@
+{%extends 'media/base.html'%}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<!-- ==================== MAIN ==================== -->
+<section>
+    <div class="container message__container">
+        <article class="message">
+            <div class="message__card">
+                <form method="GET" action="{% url 'create-thread' %}">
+                    <button class="btn btn-primary">Start a Conversation</button>
+                </form>
+                
+                <h1>Your Conversations</h1>
+                <div class="thread__body">
+                    {% for thread in threads.all %}
+                    <a href="{% url 'thread' thread.id %}">
+                        <div class="thread">
+                            <h5>{{ thread.user }} - {{ thread.receiver }}</h5>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}

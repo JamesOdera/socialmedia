@@ -1,0 +1,64 @@
+{% extends 'media/base.html' %}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<!-- ==================== MAIN ==================== -->
+<section>
+    <div class="container detail__container">
+        <article class="details">
+            <div class="middle">
+                <!-- FEEDS -->
+                <div class="feeds">
+                    <!-- FEED -->
+                    <div class="feed">
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-photo">
+                                    <!-- <img src="{% static '/images/profile1.jpg' %}" alt="profile-picture"> -->
+                                    {% if post.author.profile.photo %}
+                                    <img src="{{ post.author.profile.photo.url }}" alt="profile-picture">
+                                    {% endif %}
+                                </div>
+                                <div class="info">
+                                    <h3>{{post.author}}</h3>
+                                    <small>{{ post.whenpublished }}</small>
+                                </div>
+                            </div>
+                            
+                            {% if post.author == request.user %}
+                            <div class="user__button">
+                                <a href="{% url 'post_edit' id=post.id %}">
+                                    <button type="button" class="edit__button">Edit</button>
+                                </a>
+                                <a href="{% url 'post_delete' id=post.id %}" id="delete">
+                                    <button type="button" class="delete__button">Delete</button>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="photo">
+                            <a href="{{post.get_absolute_url}}">
+                                <img src="{{ post.image.url }}" alt="picture">
+                            </a>
+                        </div>
+                        <div id="like-section">
+                            {% include 'media/like_section.html' %}
+                        </div>
+                        <div class="caption">
+                            <p><b>{{post.author}}</b> {{post.body}}. <span class="harsh-tag"></span></p>
+                        </div>
+                        <div class="comments text-muted">{{ comments.count }} Comment{{ comments|pluralize }}</div>
+                    </div>
+                    <!-- END FEED -->
+                </div>
+            </div>
+            <div class="comment__section">
+                <h1>Comments</h1>
+                {% include 'media/comments.html' %}
+            </div> 
+            <!-- END USER COMMENT -->
+        </article>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,54 @@
+{%extends 'media/base.html'%}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<!-- ==================== MAIN ==================== -->
+<section>
+    <div class="container message__container">
+        <article class="message">
+            <div class="chat__card">
+                <div class="chat">
+                    {% if thread.receiver == request.user %}
+                    <h3>{{ thread.user }}</h3>
+                    {% else %}
+                    <h3>{{ thread.receiver }}</h3>
+                    {% endif %}
+
+                    <div class="chat-body">
+                        <div class="imessage">
+                            {% for message in message_list %}
+                            {% if message.sender_user == request.user %}
+                            <p class="from-me margin-b_one">
+                                {% if message.image %}
+                                <img src="{{ message.image.url }}" class="message-image"/>
+                                {% endif %}
+                                {{message.body}}
+                            </p>
+                                
+                            {% elif message.receiver_user == request.user %}
+                            <p class="from-them margin-b_one">
+                                {% if message.image %}
+                                <img src="{{ message.image.url }}" class="message-image"/>
+                                {% endif %}
+                                {{message.body}}
+                            </p>
+                                
+                            {% endif %}
+                            {% empty %}
+                            <h1>Nothing to see here</h1>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <form method="POST" action="{% url 'create-message' thread.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button type="submit" class="chat-btn">send</button>
+                    </form>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,76 @@
+<div class="comment__form container-fluid">
+    <form method="POST" enctype="multipart/form-data" class="comment-form" action=".">
+        {% csrf_token %}
+        {{ comment_form }}
+        <div class="form-group">
+            {% if request.user.is_authenticated %}
+            <input class="btn btn-outline-success" type="submit" value="Comment">
+            {% else %}
+            <input class="btn btn-outline-success" type="submit" value="Comment" disabled>
+            {% endif %}
+        </div>
+    </form>
+    <!-- REPLY -->
+    <div class="user__comment">
+    
+        <div class="main-comment-section">
+            {% for comment in comments %}
+            <div class="comment">
+                <div class="profile__user">
+                    {% if comment.user.profile.photo %}
+                    <img src="{{ comment.user.profile.photo.url }}" alt="profile-picture">
+                    {% endif %}
+                </div>
+                <div class="user__view">
+                    <h4>{{ comment.user|capfirst}}</h4>
+                    <p>{{comment.content}}</p>
+                </div>
+            </div>
+            
+            <!-- REPLIES TO COMMENTS -->
+            <div class="comment__form">
+                <div class="reply__button">
+                    <button type="button" class="reply-btn">reply</button>
+                </div>
+                <div class="replied-comments">
+                    <div class="reply">
+                    {% for reply in comment.replies.all %}
+                    <div class="comment">
+                        <div class="profile__user">
+                            {% if comment.user.profile.photo %}
+                            <img src="{{ reply.user.profile.photo.url }}" alt="profile-picture">
+                            {% endif %}
+                        </div>
+                        <div class="user__view">
+                            <h4>{{ reply.user|capfirst}}</h4>
+                            <p>{{reply.content}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    </div>
+                    <form method="POST" enctype="multipart/form-data" class="reply-form" action=".">
+                        {% csrf_token %}
+                        <input class="btn" type="hidden" name="comment_id" value="{{ comment.id }}">
+                        {{ comment_form }}
+                        <div class="form-group">
+                            {% if request.user.is_authenticated %}
+                            <input class="btn btn-outline-success" type="submit" value="Comment">
+                            {% else %}
+                            <input class="btn btn-outline-success" type="submit" value="Comment" disabled>
+                            {% endif %}
+                        </div>
+                    </form>
+                </div>
+               
+            </div>
+            <!-- END OF REPLIES TO COMMENTS -->
+            {% empty %}
+            <div class="comment">
+                <h1>No comments</h1>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- END -->
+   
+</div>

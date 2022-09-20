@@ -1,0 +1,27 @@
+{% load static %}
+<nav>
+    <div class="container">
+        <a href="{% url 'index' %}">
+            <h2>socialApp</h2>
+        </a>
+        <form action="{% url 'index' %}" class="search-bar">
+            <i class="uil uil-search"></i>
+            <input type="search" name="q" placeholder="Search for creators, inspirations, and projects">
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{% url 'user_logout' %}">
+            <div class="create">
+                <label class="btn btn-primary" for="create-post">Logout</label>
+            </div>
+        </a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'profile' request.user.profile.id %}">
+            <!-- <div class="profile-photo"> -->
+                {% if request.user.profile.photo %}
+                <img src="{{ request.user.profile.photo.url }}" alt="profile-picture">
+                {% endif %}
+            <!-- </div> -->
+        </a>
+        {% endif %}
+    </div>
+</nav>

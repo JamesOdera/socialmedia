@@ -1,0 +1,95 @@
+{%extends 'home/base.html'%}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<!-- ==================== MAIN ==================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--  -->
+    <div class="card__body">
+        <div class="circles">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle3 circle-3"></div>
+        </div> 
+        <div class="card">
+            <div class="card-content">
+                <!--  -->
+                <h1>Get Connected with Friends,</h1>
+                <h2>Family & People Around</h2>
+                <div class="auth-btn">
+                    <a href="{% url 'user_login' %}"><button class="btn btn-primary">Login</button></a>
+                    <a href="{% url 'register' %}"><button class="btn btn-secondary">Register</button></a>
+                </div>
+                <!--  -->
+                
+                <div class="card-info2">
+                    <h4>Profile Page</h4>
+                    <div>
+                        <p>User can click on an default avatar to view his or her profile</p>
+                        <p>Edit the profile and can also view other users profile and follow</p>
+                        <p>them</p>
+                    </div>
+                </div>
+                <div class="card-info3">
+                    <h4>Try using the following credentials to Test</h4>
+                    <div>
+                        <p>use <b>TestUser</b> as username and <b>testuser112</b> as password or</p>
+                        <p><b>TestUser2</b> as username and <b>testuser212</b> as password for demo </p>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h4>Authentication</h4>
+                    <div>
+                        <p>Welcome to a socialApp where users can create</p>
+                        <p> account, login and sign out of the app</p>
+                    </div>
+                </div>
+                <div class="card-info1">
+                    <h4>Landing Page</h4>
+                    <div>
+                        <p>Once authenticated the user will be able to see</p>
+                        <p>other users posts, profile and can click on an image</p>
+                        <p>to like comment and also reply to a Post</p>
+                    </div>
+                </div>
+                <div class="card-info4">
+                    <h4>Notifications</h4>
+                    <div>
+                        <p>You will receive notifications if a user likes your</p>
+                        <p>post, comments on your post and vice versa</p>
+                        <p>If a user follows you you will also get notified</p>
+                    </div>
+                </div>
+                <div class="card-info5">
+                    <h4>DMs</h4>
+                    <div>
+                        <p>You can also send Direct Messages to other</p>
+                        <p>users by clicking the DMs link from the Side Nav</p>
+                        <p>then start a conversation by typing the name of the user</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
+<!-- ======================= END OF MAIN ======================= -->
+{% endblock %}

@@ -1,0 +1,30 @@
+{%extends 'media/base.html'%}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<!-- ==================== MAIN ==================== -->
+<section>
+    <div class="container message__container">
+        <article class="message">
+            <h1>Start a Conversations</h1>
+            <div class="message__card thread__form">
+                <div class="error">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="error-message">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <form method="POST">
+                   {% csrf_token %}
+                   {{ form }}
+                   <div>
+                    <button type="submit" class="btn start-btn">Start</button>
+                   </div>
+                </form>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}

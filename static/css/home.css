@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-color-hue: 252;
+    --dark-color-lightness: 17%;
+    --light-color-lightness: 95%;
+    --white-color-lightness: 100%;
+
+    --color-white: hsl(252, 30%, var(--white-color-lightness));
+    --color-light: hsl(252, 100%, var(--light-color-lightness));
+    --color-gray: hsl(var(--primary-color-hue), 15%, 65%);
+    --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
+    --color-secondary: hsl(252, 100%, 90%);
+    --color-success: hsl(120, 95%, 65%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-dark: hsl(252, 30%, var(--dark-color-lightness));
+    --color-dark-light: hsla(252, 30%, var(--dark-color-lightness), 0.7);
+    --color-black: hsl(252, 30%, 10%);
+
+    --border-radius: 0.5rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+    --transition: all 300ms ease;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+body{
+    display: block;
+    position: center;
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark);
+    background: var(--color-light);
+    background: linear-gradient(-80deg,  var(--color-light), var(--color-primary));
+    overflow-x: hidden;
+    height: 100vh;
+    
+  }
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--btn-padding);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 1.2rem;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-light);
+}
+
+.btn-secondary {
+    background: var(--color-secondary);
+    color: var(--color-dark);
+}
+
+.text-bold {
+    font-weight: 500;
+}
+
+.text-muted {
+    color: var(--color-gray);
+}
+
+
+  
+
+
+/* .card__body {
+    height: auto;
+    width: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} */
+  
+h1{
+    font-size: 3.1vw;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+h2{
+    font-size: 2.5vw;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+}
+  
+.card {
+    height: 90vh;
+    width: 90vw;
+    border-radius: var(--card-border-radius);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
+    /* overflow: hidden; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.auth-btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    gap: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.card-content h4 {
+    font-weight: 600;
+}
+
+.card-content p {
+    color: var(--color-dark-light);
+}
+
+.card-info {
+    position: absolute;
+    top: -20vh;
+    left: -4vw;
+    height: fit-content;
+    width: fit-content;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-info:hover {
+    transform: translate(0, -10px);
+}
+
+.card-info1 {
+    position: absolute;
+    top: -30vh;
+    /* left: 10vw; */
+    height: fit-content;
+    width: fit-content;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-info1:hover {
+    transform: translate(0, -10px);
+}
+
+.card-info2 {
+    position: absolute;
+    top: -22vh;
+    right: -4vw;
+    height: fit-content;
+    width: fit-content;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-info2:hover {
+    transform: translate(0, -10px);
+}
+
+.card-info3 {
+    position: absolute;
+    top: 10vh;
+    left: -2vw;
+    height: fit-content;
+    width: fit-content;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-info3 b {
+    color: var(--color-danger)
+}
+
+.card-info3:hover {
+    transform: translate(0, -10px);
+}
+
+.card-info4 {
+    position: absolute;
+    top: 12vh;
+    right: 1vw;
+    height: fit-content;
+    width: fit-content;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-info4:hover {
+    transform: translate(0, -10px);
+}
+
+.card-info5 {
+    position: absolute;
+    top: 30vh;
+    right: 15vw;
+    height: fit-content;
+    width: fit-content;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.card-info5:hover {
+    transform: translate(0, -10px);
+}
+  
+  
+  
+  /* Background circles start */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    /* background: linear-gradient(120deg, #1D976C, #2c3e50); */
+    background: linear-gradient(70deg,  var(--color-light), var(--color-primary));
+  }
+
+  .circle3 {
+    position: absolute;
+    border-radius: 50%;
+    /* background: linear-gradient(120deg, #1D976C, #2c3e50); */
+    background: linear-gradient(to right,  var(--color-light), var(--color-primary));
+  }
+  .circles {
+    position: absolute;
+    height: 270px;
+    width: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  .circle-1 {
+    height: 300px;
+    width: 300px;
+    top: 100px;
+    left: -50px;
+    opacity: 0.8;
+    animation-timing-function: cubic-bezier(0.54, 0.085, 0.5, 0.92);
+    animation-iteration-count: infinite;
+    animation-name: float;
+    -webkit-animation-name: float;
+    animation-duration: 6s;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+    animation-direction: alternate;
+    
+  }
+  
+  .circle-2 {
+    height: 240px;
+    width: 240px;
+    bottom: 40px;
+    right: -100px;
+    opacity: 0.8;
+    animation-timing-function: cubic-bezier(0.54, 0.085, 0.5, 0.92);
+    animation-iteration-count: infinite;
+    animation-name: float;
+    -webkit-animation-name: float;
+    animation-duration: 6s;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    animation-direction: alternate;
+  }
+  
+  .circle-3 {
+    height: 240px;
+    width: 240px;
+    bottom: -300px;
+    right: -550px;
+    opacity: 0.8;
+    animation-timing-function: cubic-bezier(0.54, 0.085, 0.5, 0.92);
+    animation-iteration-count: infinite;
+    animation-name: float;
+    -webkit-animation-name: float;
+    animation-duration: 6s;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    animation-direction: alternate;
+  }
+  /* Background circles end */
+  
+  
+  
+  
+  
+  /* ANIMATIONS */
+  @keyframes explode {
+   0% { opacity: 1; }
+   100% { transform: scale(1.2); opacity: 0; }
+  }
+  @keyframes float {
+  
+    0% {
+      -webkit-transform: rotateX(0deg) translateY(0px);
+      -moz-transform: rotateX(0deg) translateY(0px);
+      -ms-transform: rotateX(0deg) translateY(0px);
+      -o-transform: rotateX(0deg) translateY(0px);
+      transform: rotateX(0deg) translateY(0px);
+      }
+  
+    50% {
+      -webkit-transform: rotateX(0deg) translateY(1px) translateX(5px);
+      -moz-transform: rotateX(0deg) translateY(10px) translateX(5px);
+      -ms-transform: rotateX(0deg) translateY(30px) translateX(5px);
+      -o-transform: rotateX(0deg) translateY(40px) translateX(5px);
+      transform: rotateX(0deg) translateY(10px) translateX(5px);
+  }
+    100% {
+      -webkit-transform: rotateX(0deg) translateY(0px) translateX(1px);
+      -moz-transform: rotateX(0deg) translateY(0px) translateX(1px);
+      -ms-transform: rotateX(0deg) translateY(0px) translateX(1px);
+      -o-transform: rotateX(0deg) translateY(0px) translateX(1px);
+      transform: rotateX(0deg) translateY(0px) translateX(1px);
+    }
+  
+  }
+  
+/* ===================== MEDIA QUERIES(TABLETS) =================== */
+@media screen and (max-width: 1200px){
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-btn {
+        margin-bottom: 2rem;
+    }
+
+    .card-info {
+        position: static;
+        margin-top: -2rem;
+    }
+    .card-info1 {
+        position: static;
+        margin-top: -2rem;
+    }
+    .card-info2 {
+        position: static;
+        margin-top: -2rem;
+    }
+    .card-info3 {
+        position: static;
+        margin-top: -2rem;
+    }
+    .card-info4 {
+        position: static;
+        margin-top: -2rem;
+    }
+    .card-info5 {
+        position: static;
+        margin-top: -2rem;
+    }
+}
+
+/* ===================== MEDIA QUERIES(PHONES)  =================== */
+@media screen and (max-width: 992px){
+    
+    
+}
+  
+ 
+  

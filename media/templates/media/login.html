@@ -1,0 +1,32 @@
+{%extends 'media/base.html'%}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<!-- ==================== MAIN ==================== -->
+<section>
+    <div class="login">
+        <h1>Login</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-primary">Login</button>
+            <div class="text-center"> <p>------------ OR ------------</p> </div>
+            <div class="social__btn">
+                <a href="{% url 'register' %}">
+                    <!-- <button type="button" name="button" class="btn btn__social">Google+</button> -->
+                    <span class="btn btn__google"><p>Register</p></span>
+                </a>
+            </div>
+        </form>
+        <div class="drops">
+            <div class="drop drop-1"></div>
+            <div class="drop drop-2"></div>
+            <div class="drop drop-3"></div>
+            <div class="drop drop-4"></div>
+            <div class="drop drop-5"><i class="uil uil-user"></i></div>
+          </div>
+    </div>
+</section>
+
+{% endblock %}
