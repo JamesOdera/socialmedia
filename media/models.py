@@ -145,6 +145,7 @@ class MessageModel(models.Model):
     receiver_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='+')
     body = models.TextField(max_length=500)
     image = CloudinaryField('image')
+    # image = models.ImageField(upload_to = 'chat_images', blank=True, null=True)
     date = models.DateTimeField(default=timezone.now)
     is_read = models.BooleanField(default=False)
     

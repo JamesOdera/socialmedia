@@ -21,7 +21,7 @@ class ThreadModelAdmin(admin.ModelAdmin):
     list_display = ('user', 'receiver')
     
 class MessageModelAdmin(admin.ModelAdmin):
-    list_display = ('thread', 'sender_user', 'receiver_user', 'body', 'image', 'date', 'is_read')
+    list_display = ('thread', 'sender_user', 'receiver_user', 'body', 'date', 'is_read')
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Profile, ProfileAdmin)
