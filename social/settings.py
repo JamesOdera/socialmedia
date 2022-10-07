@@ -26,13 +26,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gbmd53w4=-y68d8z-xgd*0_4+-s(0!nieh_-bpoitph+t^!^jb'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -83,16 +76,41 @@ TEMPLATES = [
 WSGI_APPLICATION = 'social.wsgi.application'
 
 cloudinary.config(
-    cloud_name='santan',
-    api_key='711176936419922',
-    api_secret='Ehvw4CDtcQlNmPwDpvez1JplZUQ'
-    # cloud_name=os.environ.get('CLOUD_NAME'),
-    # api_key=os.environ.get('API_KEY'),
-    # api_secret=os.environ.get('API_SECRET'),
-    # secure=True
+    # cloud_name='santan',
+    # api_key='711176936419922',
+    # api_secret='Ehvw4CDtcQlNmPwDpvez1JplZUQ'
+    cloud_name=os.environ.get('CLOUD_NAME'),
+    api_key=os.environ.get('API_KEY'),
+    api_secret=os.environ.get('API_SECRET'),
+    secure=True
 )
 
+MODE = config("MODE", default="dev")
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+# development
+if config('MODE') == "dev":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+            'PORT': '',
+        }
 
+    }
+# production
+else:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+    }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Database
