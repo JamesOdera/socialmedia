@@ -344,6 +344,9 @@
 }
 .profile__container .profile .follower-card .profile-photo {
     border: 3px solid var(--color-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .profile__container .profile .follower-card .profile:hover {
     box-shadow: 0 0 1rem var(--color-primary);
@@ -354,6 +357,17 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+}
+
+.profile__container .profile .profile__card .upper .upper-photo {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--color-gray);
+    font-size: 1.5rem;
+    border-radius: 50%;
 }
 
 .profile__container .profile .profile__card .upper img {

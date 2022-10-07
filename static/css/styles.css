@@ -387,6 +387,11 @@ main .container .left .profile:hover {
 .left .notifications-popup small {
     display: block;
 }
+.left .notifications-popup .profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* ===================== MIDDLE =================== */
 .middle article {
     display: flex;
@@ -484,6 +489,19 @@ main .container .left .profile:hover {
 .middle .feed .user {
     display: flex;
     gap: 1rem;
+}
+
+.middle .feed .user .profile-photo {
+    /* border: 3px solid var(--color-gray); */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.middle .feed .user .profile-photo span {
+    color: var(--color-gray);
+    font-size: 1.2rem;
 }
 
 .middle .feed .photo {
@@ -619,6 +637,9 @@ main .container .right {
 .right .message .profile-photo {
     position: relative;
     overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .right .profile-photo img {
@@ -673,6 +694,12 @@ main .container .right {
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-bottom: 0.7rem;
+}
+
+.right .request .profile-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .right .request .info {

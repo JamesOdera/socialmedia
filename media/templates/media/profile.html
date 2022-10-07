@@ -9,7 +9,14 @@
         <article class="profile">
             <div class="profile__card">
                 <article class="upper">
-                    <img src="{{ profile.photo.url }}" alt="profile-picture">
+                    <div class="upper-photo">
+                        {% if profile.photo %}
+                        <img src="{{ profile.photo.url }}" alt="profile-picture">
+                        {% else %}
+                        <span>{{ profile.user.username|slice:":1" }}</span>
+                        {% endif %}
+                    </div>
+                    
                     {% if user == request.user %}
                     <div class="fol-sec">
                         <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>

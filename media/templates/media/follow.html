@@ -16,7 +16,12 @@
                     {% for p in profile %}
                         <a href="{% url 'profile' p.user.profile.id %}" class="profile">
                             <div class="profile-photo">
+                                <!-- <img src="{{ p.user.profile.photo.url }}" alt="profile-picture"> -->
+                                {% if p.user.profile.photo %}
                                 <img src="{{ p.user.profile.photo.url }}" alt="profile-picture">
+                                {% else %}
+                                <span>{{ p.user.username|slice:":1" }}</span>
+                                {% endif %}
                             </div>
                             <div class="handle">
                                 <h4>{{p.user}}</h4>

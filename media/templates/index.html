@@ -41,7 +41,14 @@
                         {% if notification.notification_type == 1 %}
                         <div>
                             <a href="{% url 'post-notification' notification.id notification.post.id notification.post.slug %}" class="notif-item">
-                                <div class="profile-photo"><img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"></div>
+                                <div class="profile-photo">
+                                    <!-- <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"> -->
+                                    {% if notification.from_user.profile.photo %}
+                                    <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture">
+                                    {% else %}
+                                    <span>{{ notification.from_user.username|slice:":1" }}</span>
+                                    {% endif %}
+                                </div>
                                 <div class="notification-body">
                                     <b>{{notification.from_user}}</b> liked your post
                                     <small class="text-muted">2 DAYS AGO</small>
@@ -52,7 +59,14 @@
                         {% elif notification.notification_type == 2 %}
                         <div>
                             <a href="{% url 'post-notification' notification.id notification.post.id notification.post.slug %}" class="notif-item">
-                                <div class="profile-photo"><img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"></div>
+                                <div class="profile-photo">
+                                    <!-- <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"> -->
+                                    {% if notification.from_user.profile.photo %}
+                                    <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture">
+                                    {% else %}
+                                    <span>{{ notification.from_user.username|slice:":1" }}</span>
+                                    {% endif %}
+                                </div>
                                 <div class="notification-body">
                                     <b>{{notification.from_user}}</b> commented on your post
                                     <small class="text-muted">2 DAYS AGO</small>
@@ -65,7 +79,14 @@
                         {% if notification.notification_type == 1 %}
                         <div>
                             <a href="{% url 'post-notification' notification.id notification.comment.post.id notification.comment.post.slug %}"  class="notif-item">
-                                <div class="profile-photo"><img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"></div>
+                                <div class="profile-photo">
+                                    <!-- <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"> -->
+                                    {% if notification.from_user.profile.photo %}
+                                    <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture">
+                                    {% else %}
+                                    <span>{{ notification.from_user.username|slice:":1" }}</span>
+                                    {% endif %}
+                                </div>
                                 <div class="notification-body">
                                     <b>{{notification.from_user}}</b> liked your comment
                                     <small class="text-muted">2 DAYS AGO</small>
@@ -76,7 +97,14 @@
                         {% elif notification.notification_type == 2 %}
                         <div>
                             <a href="{% url 'post-notification' notification.id notification.comment.post.id notification.comment.post.slug %}"  class="notif-item">
-                                <div class="profile-photo"><img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"></div>
+                                <div class="profile-photo">
+                                    <!-- <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"> -->
+                                    {% if notification.from_user.profile.photo %}
+                                    <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture">
+                                    {% else %}
+                                    <span>{{ notification.from_user.username|slice:":1" }}</span>
+                                    {% endif %}
+                                </div>
                                 <div class="notification-body">
                                     <b>{{notification.from_user}}</b> replied you comments
                                     <small class="text-muted">2 DAYS AGO</small>
@@ -88,7 +116,14 @@
                     {% elif notification.thread %}
                     <div>
                         <a href="{% url 'thread-notification' notification.id notification.thread.id %}"  class="notif-item">
-                            <div class="profile-photo"><img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"></div>
+                            <div class="profile-photo">
+                                <!-- <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"> -->
+                                {% if notification.from_user.profile.photo %}
+                                <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture">
+                                {% else %}
+                                <span>{{ notification.from_user.username|slice:":1" }}</span>
+                                {% endif %}
+                            </div>
                             <div class="notification-body">
                                 <b>{{notification.from_user}}</b> sent you a message
                                 <small class="text-muted">2 DAYS AGO</small>
@@ -99,7 +134,14 @@
                     {% else %}
                     <div>
                         <a href="{% url 'follow-notification' notification.id notification.from_user.profile.id %}" class="notif-item">
-                            <div class="profile-photo"><img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"></div>
+                            <div class="profile-photo">
+                                <!-- <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"> -->
+                                {% if notification.from_user.profile.photo %}
+                                <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture">
+                                {% else %}
+                                <span>{{ notification.from_user.username|slice:":1" }}</span>
+                                {% endif %}
+                            </div>
                             <div class="notification-body">
                                 <b>{{notification.from_user}}</b> followed you
                                 <small class="text-muted">2 DAYS AGO</small>
@@ -169,6 +211,8 @@
                                 <div class="profile-photo">
                                     {% if post.author.profile.photo %}
                                     <img src="{{ post.author.profile.photo.url }}" alt="profile-picture">
+                                    {% else %}
+                                    <span>{{ post.author.username|slice:":1" }}</span>
                                     {% endif %}
                                 </div>
                             </a>
@@ -245,7 +289,12 @@
                         <a href="{% url 'thread-notification' notification.id notification.thread.id %}" class="a-message">
                             <div class="message">
                                 <div class="profile-photo">
+                                    <!-- <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture"> -->
+                                    {% if notification.from_user.profile.photo %}
                                     <img src="{{ notification.from_user.profile.photo.url }}" alt="profile-picture">
+                                    {% else %}
+                                    <span>{{ notification.from_user.username|slice:":1" }}</span>
+                                    {% endif %}
                                     <!-- {% if notification.from_user.is_authenticated %}<div class="active"></div>{% endif %} -->
                                 </div>
                                 <div class="message-body">
@@ -277,7 +326,12 @@
                     <div class="info">
                         <a href="{% url 'profile' p.user.profile.id %}">
                         <div class="profile-photo">
+                            <!-- <img src="{{ p.user.profile.photo.url }}" alt="profile-picture"> -->
+                            {% if p.user.profile.photo %}
                             <img src="{{ p.user.profile.photo.url }}" alt="profile-picture">
+                            {% else %}
+                            <span>{{ p.user.username|slice:":1" }}</span>
+                            {% endif %}
                         </div>
                         </a>
                         <div>
