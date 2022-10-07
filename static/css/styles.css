@@ -159,6 +159,19 @@ nav img {
     height: 40px;
 }
 
+nav .user_p {
+    border-radius: 50%;
+    border: 3px solid var(--color-gray);
+    color: inherit;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* ===================== MAIN =================== */
 main {
     position: relative;
@@ -194,6 +207,10 @@ main .container .left .profile {
 
 main .container .left .profile .profile-photo {
     border: 3px solid var(--color-gray);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main .container .left .profile:hover {
@@ -439,6 +456,14 @@ main .container .left .profile:hover {
 
 .middle .create-post input {
     border-radius: var(--border-radius);
+}
+
+.middle .create-post .profile-photo {
+    border: 3px solid var(--color-gray);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ===================== FEEDS =================== */

@@ -13,6 +13,8 @@
                 <div class="profile-photo">
                     {% if request.user.profile.photo %}
                     <img src="{{ request.user.profile.photo.url }}" alt="profile-picture">
+                    {% else %}
+                    <span>{{ request.user.username|slice:":1" }}</span>
                     {% endif %}
                 </div>
                 <div class="handle">
@@ -144,7 +146,13 @@
             </article>
             <!--  -->
             <form class="create-post">
-                <div class="profile-photo"><img src="{{ request.user.profile.photo.url }}" alt="profile-picture"></div>
+                <div class="profile-photo">
+                    {% if request.user.profile.photo %}
+                    <img src="{{ request.user.profile.photo.url }}" alt="profile-picture">
+                    {% else %}
+                    <span>{{ request.user.username|slice:":1" }}</span>
+                    {% endif %}
+                </div>
                 <input type="text" placeholder="what's on your mind, {{request.user.username}}" disabled>
                 <a href="{% url 'post_create' %}">
                     <input type="button" value="Post" class="btn btn-primary">
