@@ -1,4 +1,4 @@
-# [News Highlights Application](https://soc1almedia.herokuapp.com/)
+# [SocialMedia App](https://soc1almedia.herokuapp.com/)
 
 ## Author
 James Odera
